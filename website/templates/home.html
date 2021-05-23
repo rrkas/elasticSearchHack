@@ -1,6 +1,25 @@
-<!doctype html>
-<html>
-<body>
+{% extends "layout.html" %}
+{% block content%}
+<div class="row mt-5 mb-5">
+    {% for n in news %}
+        <div class="col-md-6">
+            <div class="news-box mt-1 mb-1">
+                <b>{{ n.title }}</b>
+                <div class="news-desc" style="text-align: justify;">
+                    {{ n.desc }}
+                </div>
+                <span style="display: flex;">
+                    <div style="text-align: left;margin-left:10px;">
+                        <b>{{ n.publishedAt }}</b>
+                    </div>
+                    <div style="flex-grow: 1;"></div>
+                    <div style="text-align: right;margin-right:10px;">
+                        - {% if n.author %}{{ n.author }}{% else %} Anonymous {% endif %}
 
-</body>
-</html>
+                    </div>
+                </span>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock content%}
