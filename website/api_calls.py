@@ -55,6 +55,7 @@ class APISetu:
 
 
 class APINews:
+    DOCS = 'https://newsapi.org/docs/get-started#search'
     API_KEY = '42a3934049bc45f0836ba9cf11e19870'
 
     def get_latest_news(self, date: datetime = datetime.now(), kwd='Covid', country='in'):
