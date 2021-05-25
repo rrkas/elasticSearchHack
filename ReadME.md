@@ -27,3 +27,5 @@ in another terminal
 ![](gif-file)
 
 ## Challenges faced
+- Integrating elesticsearch for autocomplete feature
+- Integrating elasticsearch in Flask app using JS
