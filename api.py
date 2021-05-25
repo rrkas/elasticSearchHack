@@ -1,5 +1,5 @@
 try:
-    from flask import app, Flask
+    from flask import Flask
     from flask_restful import Resource, Api, reqparse
     import elasticsearch
     from elasticsearch import Elasticsearch
