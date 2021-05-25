@@ -1,7 +1,5 @@
 ## Covid Hub
 
----
-
 We all have been affected by the current COVID-19 pandemic. However, the impact of the pandemic and its consequences are felt differently depending on our status as individuals and as members of society.
 So,people need to be conscious about what is happening around the world or in their localities.
 
@@ -13,11 +11,8 @@ So,here is our solution to the common people as developers.One stop for everythi
 
 ![](gif-file)
 
----
 
 ## How to install
-
----
 
 1. First item
 2. Second item
@@ -28,10 +23,7 @@ So,here is our solution to the common people as developers.One stop for everythi
 7. First item
 8. First item
 
----
 
 ![](gif-file)
 
 ## Challenges faced
-
----
