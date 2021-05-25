@@ -14,14 +14,14 @@ So,here is our solution to the common people as developers.One stop for everythi
 
 ## How to install
 
-1. First item
-2. Second item
-3. Third item
-4. Fourth item
-5. First item
-6. First item
-7. First item
-8. First item
+1. virtualenv venv
+2. source venv\Scripts\activate
+3. pip install -r requirements.txt
+4. python run.py  
+
+in another terminal
+1. source venv\Scripts\activate
+2. python api.py
 
 
 ![](gif-file)
