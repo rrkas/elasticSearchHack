@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+{% block content%}
+<div class="container">
+<div class="row mt-5 mb-5">
+      <table class="table">
+        <thead class="purple white-text">
+          <tr>
+            <th scope="col">CENTERS</th>
+            <th scope="col">23TH MAY 2021</th>
+            <th scope="col">24TH MAY 2021</th>
+            <th scope="col">25TH MAY 2021</th>
+            <th scope="col">26TH MAY 2021</th>
+            <th scope="col">27TH MAY 2021</th>
+            <th scope="col">28TH MAY 2021</th>
+            <th scope="col">29TH MAY 2021</th>
+          </tr>
+        </thead>
+    {%  for slot in slots %}
+        <tbody>
+          <tr>
+            <th >{{slot["name"]}}<br><span class="grey-text">{{slot["address"]}},{{slot["district_name"]}},{{slot["state_name"]}},{{slot["pincode"]}}</span></th>
+            <td><button type="button" class="btn btn-sm btn-outline-secondary waves-effect">NA</button></td>
+            {% for session in slot["sessions"] %}
+            <td>
+                {% if session["available_capacity"]==0 %}
+                <button type="button" class="btn btn-danger btn-rounded btn-sm">Booked</button>
+                {%endif%}
+                <br>
+                {{session["vaccine"]}}
+                <br>
+                <span class="red-text">Age :{{session["min_age_limit"]}} +</span>
+            </td>
+             {%endfor%}
+            <td><button type="button" class="btn btn-sm btn-outline-secondary waves-effect">NA</button></td>
+            <td><button type="button" class="btn btn-sm btn-outline-secondary waves-effect">NA</button></td>
+            <td><button type="button" class="btn btn-sm btn-outline-secondary waves-effect">NA</button></td>
+          </tr>
+    {% endfor %}
+</tbody>
+</table>
+</div>
+{% endblock content%}
