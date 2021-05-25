@@ -2,20 +2,27 @@
 {% block content%}
 <div class="row mt-5 mb-5">
     {% for n in news %}
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="news-box mt-1 mb-1">
-                <b>{{ n.title }}</b>
-                <div class="news-desc" style="text-align: justify;">
-                    {{ n.desc }}
-                </div>
                 <span style="display: flex;">
-                    <div style="text-align: left;margin-left:10px;">
-                        <b>{{ n.publishedAt }}</b>
+                    <div class="p-1" style="text-align: center;">
+                        <img src="{{ n.urlToImage }}" height="90px" width="90px" style="border-radius: 5px;">
                     </div>
-                    <div style="flex-grow: 1;"></div>
-                    <div style="text-align: right;margin-right:10px;">
-                        - {% if n.author %}{{ n.author }}{% else %} Anonymous {% endif %}
-
+                    <div style="flex: 1; margin-left: 10px;">
+                        <b>{{ n.title }}</b>
+                        <div class="news-desc" style="text-align: justify;">
+                            <div>{{ n.desc }}</div>
+                            <div><a href="{{ n.url }}" target="_blank">Read More</a></div>
+                        </div>
+                        <span style="display: flex;">
+                            <div style="text-align: left;margin-left:10px;">
+                                <b>{{ n.publishedAt }}</b>
+                            </div>
+                            <div style="flex-grow: 1;"></div>
+                            <div style="text-align: right;margin-right:10px;">
+                                - {% if n.author %}{{ n.author }}{% else %} Anonymous {% endif %}
+                            </div>
+                        </span>
                     </div>
                 </span>
             </div>

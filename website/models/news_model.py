@@ -14,7 +14,7 @@ class NewsModel:
         self.urlToImage = data['urlToImage']
         self.publishedAt = datetime_from_utc_to_local(data['publishedAt'])
         self.content = str(data['content'])
-        print(self.content[-10:])
+        # print(self.content[-10:])
 
     def __repr__(self):
         return str(self.data)
