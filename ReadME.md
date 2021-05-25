@@ -7,7 +7,7 @@ Basically,people browse the internet as their first choice option to find about 
 situation.However,there are countless number of websites for different purposes like checking COVID-19
 news around the world or in their own country,checking vaccination slots to get vaccinated and even more number of apps.Thus,it intimidates many people in general.
 
-So,here is our solution to the common people as developers.One stop for everything related to covid- **COVID HUB**.
+So,here is our solution to the common people as developers.One stop for everything related to covid- "**COVID HUB**".
 
 ![](gif-file)
 
