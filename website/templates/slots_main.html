@@ -92,18 +92,22 @@
   </head>
   <body>
   <form id="myForm">
+  <div class="container">
     <div class="input-field mui-select">
-  <select name="state" id="countySel" size="1">
+  <div class="row">
+  <select width="100%" name="state" id="countySel" size="1">
   <option value="" selected="selected">Choose State</option>
   </select>
   <br>
-  <select name="countrya" id="stateSel" size="1">
+  <select width="100%" name="countrya" id="stateSel" size="1">
   <option value="" selected="selected">Choose District</option>
   </select>
   <br>
-  <a href="{{ url_for(slots.check_availibility_district,2) }}">
-  <input type="button" value="Search">
+  <a href="http://127.0.0.1:5000/slots/districts/2">
+  <input type="button" class="btn btn-primary" value="Search">
   </a>
+  </div>
+  </div>
     </div>
   </form>
   <body>
