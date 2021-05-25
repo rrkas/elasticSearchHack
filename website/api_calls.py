@@ -1,57 +1,54 @@
 import requests
 from datetime import datetime
-
+import json
+from fake_useragent import UserAgent
 
 class APISetu:
-    BASE_URL = 'https://cdn-api.co-vin.in/api'
+    
+    def check_availibility_pincode(self, pincode: str , date :str):
+        User_agent = UserAgent()
+        browser_header = {'User-Agent': User_agent.random}
+        URL = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode={}&date={}".format(pincode,date)
+        response = requests.get(URL, headers=browser_header)
+        if response.ok:
+            return response.json() 
+        else:
+            return response.status_code                       
 
-    def __init__(self):
-        self.txnId = None
+    def check_availibility_district(self, district_id:str ,date : str):
+        User_agent = UserAgent()
+        browser_header = {'User-Agent': User_agent.random}
+        URL = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id={}&date={}".format(district_id,date)
+        response = requests.get(URL, headers=browser_header)
+        if response.ok:
+            return response.json() 
+        else:
+            return response.status_code  
+         
+'''
+    def get_states(self):
+        User_agent = UserAgent()
+        browser_header = {'User-Agent': User_agent.random}
+        URL = "https://cdn-api.co-vin.in/api/v2/admin/location/states"
+        response = requests.get(URL, headers=browser_header)
+        if response.ok:
+            return response.json() 
+        else:
+            return response.status_code 
+    def get_districts(self):
+        User_agent = UserAgent()
+        browser_header = {'User-Agent': User_agent.random}
+        URL = "https://cdn-api.co-vin.in/api/v2/admin/location/districts/{}".format(state_id,date)
+        response = requests.get(URL, headers=browser_header)
+        if response.ok:
+            return response.json() 
+        else:
+            return response.status_code 
+'''           
 
-    def generate_otp(self, number: str):
-        url = f"{APISetu.BASE_URL}/v2/auth/public/generateOTP"
-        data = {
-            "mobile": number,
-        }
-        try:
-            response = requests.post(url=url, data=data)
-            print(response)
-            print('--------------------------------------')
-            print(response.url)
-            print('--------------------------------------')
-            print(response.text)
-            print('--------------------------------------')
-            print(response.content)
-            print('--------------------------------------')
-            print(response.request.headers)
-            print('--------------------------------------')
-            if response.status_code == 200:
-                print(response.json())
-            # if response.status_code == 200:
-            #     self.txnId = response.json()['txnId']
-        except Exception as e:
-            print('GENERATE_OTP_ERROR', e.args)
 
-    def confirm_otp(self, otp: str):
-        url = f"{APISetu.BASE_URL}/v2/auth/public/confirmOTP"
-        if not self.response:
-            return
-        json = self.response.json()
-        data = {
-            "otp": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
-            "txnId": json['txnId'],
-        }
-        try:
-            self.response = requests.post(url=url, data=data)
-        except Exception as e:
-            print('GENERATE_OTP_ERROR', e.args)
 
-    def states(self):
-        url = f"{APISetu.BASE_URL}/v2/admin/location/states"
-        try:
-            self.response = requests.get(url)
-        except Exception as e:
-            print('STATES_ERROR', e.args)
+        
 
 
 class APINews:
